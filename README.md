@@ -15,6 +15,7 @@ HTTP 메시지에 모든 것을 전송
 - 정적 리소스 제공, 기타 부가기능
 - 정적(파일) HTML, CSS, JS, 이미지, 영상
 - 예) NGINX, APACHE
+
 ![WEB_SERVER](https://github.com/keunoh/spring-mvc/assets/96904103/9c90c04c-0c25-4841-95b3-66c1ec12624e)
 
 
@@ -25,6 +26,7 @@ HTTP 메시지에 모든 것을 전송
   - 동적 HTML, HTTP API(JSON)
   - 서블릿, JSP, 스프링 MVC
 - 예) 톰캣(Tomcat) Jetty, Undertow
+
 ![WAS](https://github.com/keunoh/spring-mvc/assets/96904103/13dd68f3-46ed-47d7-a304-194755e2ea70)
 
 ### 웹 서버, 웹 애플리케이션 서버(WAS) 차이
@@ -42,6 +44,7 @@ HTTP 메시지에 모든 것을 전송
 - WAS가 너무 많은 역할을 담당, 서버 과부하 우려
 - 가장 비싼 애플리케이션 로직이 정적 리소스 때문에 수행이 어려울 수 있음
 - WAS 장애시 오류 화면도 노출 불가능
+
 ![WAS_DB](https://github.com/keunoh/spring-mvc/assets/96904103/6d3e6d1b-33a4-44c1-a49d-70cc55b6868b)
 
 ### 웹 시스템 구성 - WEB, WAS, DB
@@ -54,6 +57,7 @@ HTTP 메시지에 모든 것을 전송
 - 정적 리소스만 제공하는 웹 서버는 잘 죽지 않음
 - 애플리케이션 로직이 동작하는 WAS 서버는 잘 죽음
 - WAS, DB 장애시 WEB 서버가 오류 화면 제공 가능
+
 ![WEB_WAS_DB](https://github.com/keunoh/spring-mvc/assets/96904103/b704fd95-7fef-4c75-8506-ce09b24a6840)
 
 ### 서블릿
@@ -62,6 +66,7 @@ HTTP 메시지에 모든 것을 전송
   - HTTP 요청 정보를 편리하게 사용할 수 있는 HttpServletRequest
   - HTTP 응답 정보를 편리하게 제공할 수 있는 HttpServletResponse
   - 개발자는 HTTP 스펙을 매우 편리하게 사용
+
 ![SERVLET](https://github.com/keunoh/spring-mvc/assets/96904103/1f264362-ad9a-4b17-8cf0-a2dff25f7228)
 - HTTP 요청, 응답 흐름
   - HTTP 요청 시
