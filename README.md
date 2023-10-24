@@ -67,13 +67,14 @@ HTTP 메시지에 모든 것을 전송
   - HTTP 응답 정보를 편리하게 제공할 수 있는 HttpServletResponse
   - 개발자는 HTTP 스펙을 매우 편리하게 사용
 
-![SERVLET](https://github.com/keunoh/spring-mvc/assets/96904103/1f264362-ad9a-4b17-8cf0-a2dff25f7228)
 - HTTP 요청, 응답 흐름
   - HTTP 요청 시
     - WAS는 Request, Response 객체를 새로 만들어서 서블릿 객체 호출
     - 개발자는 Request 객체에서 HTTP 요청 정보를 편리하게 꺼내서 사용
     - 개발자는 Response 객체에 HTTP 응답 정보를 편리하게 입력
     - WAS는 Response 객체에 담겨있는 내용으로 HTTP 응답 정보를 생성
+
+![SERVLET](https://github.com/keunoh/spring-mvc/assets/96904103/1f264362-ad9a-4b17-8cf0-a2dff25f7228)
 
 ### 서블릿 컨테이너
 - 톰캣처럼 서블릿을 지언하는 WAS를 서블릿 컨테이너라고 함
