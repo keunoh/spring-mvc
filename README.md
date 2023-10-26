@@ -1,4 +1,4 @@
-spring-mvc
+Learn about Spring MVC
 
 # 웹 애플리케이션 이해
 ### 모든 것이 HTTP
