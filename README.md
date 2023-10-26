@@ -249,12 +249,27 @@ HTTP 요청 메시지를 개발자가 직접 파싱해서 사용해도 되지만
 - *중요*
   - HttpServletRequest, HttpServletResponse를 사용할 떄 가장 중요한 점은 이 객체들이 HTTP 요청 메시지, HTTP 응답 메시지를 편리하게 사용하도록 도와주는 객체라는 점이다. 따라서 이 기능에 대해서 깊이 있는 이해를 하려면 "HTTP 스펙이 제공하는 요청, 응답 메시지 자체를 이해"해야 한다.
 
-
-
-
-
-
-
+### HTTP 요청 데이터 - 개요
+HTTP 요청 메시지를 통해 클라이언트에서 서버로 데이터를 전달하는 방법을 알아보자.
+- 주로 다음 3가지 방법을 사용한다.
+  - `GET - 쿼리 파라미터`
+    - /url?username=hello&age=20
+    - 메시지 바디 없이, URL의 쿼리 파라미터에 데이터를 포함해서 전달
+    - 예) 검색, 필터, 페이징등에서 많이 사용하는 방식
+  - `POST - HTML Form`
+    - content-type: application/x-www-form-urlencoded
+    - 메시지 바디에 쿼리 파라미터 형식으로 전달 username=hello&age=20
+    - 예) 회원 가입, 상품 주문, HTML Form 사용
+  - `HTTP message body`에 데이터를 직접 담아서 요청
+    - HTTP API에서 주로 사용, JSON, XML, TEXT
+    - content-type: application/json
+    - 데이터 형식은 주로 JSON 사용
+      - POST, PUT, PATCH
+- *참고*
+  - content-type은 HTTP 메시지 바디의 데이터 형식을 지정한다. `GET URL 쿼리 파라미터 형식`으로 클라이언트에서 서버로 데이터를 전달할 때는 HTTP 메시지 바디를 사용하지 않기 때문에 content-type이 없다. `POST HTML Form 형식`으로 데이터를 전달하면 HTTP 메시지 바디에 해당 데이터를 포함해서 보내기 때문에 바디에 포함된 데이터가 어떤 형식인지 content-type을 꼭 지정해야 한다. 이렇게 폼으로 데이터를 전송하는 형식을 application/x-www-form-urlencoded라 한다. 
+  - inputStream은 byte코드를 반환한다. byte 코드는 우리가 읽을 수 있는 문자(String)로 보려면 문자표(Charset)를 지정해주어야 한다. 여기서는 UTF_8 Charset을 지정해주었다.
+  - JSON 결과를 파싱해서 사용할 수 있는 자바 객체로 변환하려면 Jackson, Gson 같은 JSON 변환 라이브러리를 추가해서 사용해야 한다. 스프링 부트로 Spring MVC를 선택하면 기본으로 Jackson 라이브러리(ObjectMapper)를 함꼐 제공한다.
+  - HTML form 데이터도 메시지 바디를 통해 전송되므로 직접 읽을 수 있다. 하지만 편리한 파라미터 조회기능(request.getParameter(...))을 이미 제공하기 때문에 파라미터 조회 기능을 사용하면 된다.
 
 
 
